@@ -13,3 +13,5 @@ Input submitted in a form is sanitized in the following way:
 The challenge is to get the following string past the validator:
 
 "><script>alert("foo")</script>
+
+You can try it yourself [here](http://validation-bypass.surge.sh/).
