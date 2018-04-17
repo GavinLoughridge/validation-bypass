@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1>Validation Bypass</h1>
+    <p>This is a small tool based on a question from chaper 2 of <a href="http://mdsec.net/wahh/">The Web Application Hackers Handbook</a>.</p>
+    <p>The input submitted in the form below is sanitized in the following way:</p>
+    <ol>
+      <li>Any &ltscript&gt tags are removed</li>
+      <li>The input is truncated to 50 charecters</li>
+      <li>Any quotation marks are removed</li>
+      <li>The input is URL-decoded</li>
+      <li>If anything was deleted, repeat the sanitization from step 1.</li>
+    </ol>
+    <p>The challenge is to get the following string past the validator:</p>
+    <p>&quot&gt&ltscript&gtalert(&quotfoo&quot)&lt/script&gt</p>
+
+    <div id="validator">
+      <input v-model="input"></input>
+      <button v-on:click="validate">Validate</button>
+      <p>{{ result }}</p>
+    </div>
+
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src='/script.js'></script>
+</html>
